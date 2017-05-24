@@ -3,7 +3,8 @@
         "slim/slim": "^3.8",
         "illuminate/database": "^5.4",
         "vlucas/phpdotenv": "^2.4",
-        "spatie/laravel-fractal": "^4.0"
+        "spatie/laravel-fractal": "^4.0",
+        "illuminate/pagination": "^5.4"
     },
     "autoload": {
     	"psr-4": {
