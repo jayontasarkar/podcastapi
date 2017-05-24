@@ -7,17 +7,17 @@ use App\Transformers\PodcastTransformer;
 use League\Fractal\{
 	Resource\Item, 
 	Resource\Collection,
-	Pagination\IlluminatePaginatorAdaptar
+	Pagination\IlluminatePaginatorAdapter
 };
 
 class PodcastsController extends Controller
 {
 	public function index($request, $response)
 	{
-		$podcasts = Podcast::latest()->paginate(2);
+		$podcasts = Podcast::latest()->paginate(3);
 
 		$transformer = (new Collection($podcasts, new PodcastTransformer))
-				->setPaginator(new IlluminatePaginatorAdaptar($podcasts));
+				->setPaginator(new IlluminatePaginatorAdapter($podcasts));
 
 		return $response->withJson(
 			$this->c->fractal->createData($transformer)->toArray()
